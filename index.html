@@ -1,0 +1,70 @@
+<html> 
+  <head>	
+     <meta charset="utf-8"> 
+     <title>UkolQuizXmas</title> 
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="animation.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  </head>	
+  <body> 
+    <section class="home">
+      <h1>Vánoční kvíz</h1>
+      <h2>Kvíz obsahuje tradiční otázky na téma Vánoc</h2>
+      
+      <h3>Počet otázek:</h2>
+      <div class="qcount">
+        <span onclick="qcount(false)">-</span>
+        <div id="counterFirst" class="counter">0</div>
+        <div id="counterSecond" class="counter">1</div>
+        <span onclick="qcount(true)">+</span>
+      </div>
+      <button class="button" onclick="beginQuiz()">Začít</button>
+    </section>
+    
+    <section id="quiz">
+      
+      <div class="quiz-box">
+        
+        <div class="question">
+          <h1 id="questionText"></h1>
+          <ol>
+            <li class="questionOption" value="1"></li>
+            <li class="questionOption" value="2"></li>
+            <li class="questionOption" value="3"></li>
+          </ol>
+        </div>
+                                    
+
+        <div class="buttons">
+          <button onclick="confirm()" class="button confirm">Potvrdit</button>
+          <button onclick="nextQuestion()" class="button next">Další</button>
+          <button onclick="endQuiz()" class="button end">Konec</button>
+      </div>
+      </div>
+
+    </section>
+    <section class="results">
+      <h1>Výsledky</h1>
+      <h2 id="scoremain"></h2>
+      <div class="subscores">
+        <h3 class="scoresub percent"></h3>
+        <!-- <h3 class="scoresub"></h3>
+        <h3 class="scoresub"></h3> -->
+      </div>
+      <div id="graph"><span class="zero">0%</span> <div id="graphContent"> <span class="showpercent"></span></div></div>
+    </section>
+
+
+
+
+
+
+    <!-- Scripts -->
+    <script src="questionsAPI.js"></script>
+    <script src="quiz.js">
+      
+    </script>
+    <script src="snow.js">	
+    </script>   
+   </body>	
+ </html>	

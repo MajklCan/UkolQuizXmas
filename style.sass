@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+body 
+    background-color: rgb(32,41,56)
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 0
+    overflow: hidden
+    transition: 3000ms ease-in-out background-color
+canvas 
+    position: absolute
+    z-index: -1
+.home
+    display: none
+    font-family: Roboto
+    color: white
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    margin-top: -5vh
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both
+    & h1
+     font-family: bungee
+     font-weight: normal
+     font-size: 13vh
+     text-align: center
+     margin: 0
+     
+    & h2  
+        font-family: Pacifico
+        font-weight: 300
+        font-size: 4vh
+        margin-top: -7vh
+    & h3
+        font-family: Pacifico
+        font-size: 4vh
+        margin: 2vh
+        margin-bottom: -5vh
+    & button 
+        background: rgb(240,52,52)
+        border: none
+        border-radius: 50px
+        padding: 0vh 5rem
+        margin: 0
+        color: white  
+        font-size: 1.8em
+        font-family: Bungee
+        font-weight: lighter
+        text-align: center
+        text-transform: uppercase
+        transition: 0.4s ease-in-out all
+        &:hover
+            background-color: white
+            color: rgb(215,52,52)
+            cursor: pointer
+    & .qcount
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100vw
+        & .counter
+            margin: 2rem -0.75rem
+            text-align: center
+            background-color: rgba(00,0,0,0.35)
+            font-size: 2rem
+            padding: 1rem 3rem
+            transform: scale(0.75)
+            font-family: Bungee
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+        & span  
+            width: 1.5em
+            height: 1.5em
+            text-align: center
+            font-size: 1.5rem
+            opacity: 0
+            transition: 300ms ease-in-out all
+            border-radius: 50%
+            cursor: pointer
+            &:hover
+                background-color: rgb(240,52,52)  
+                border-radius: 100px
+        &:hover span  
+            opacity: 1
+
+            
+        
+    
+// Quiz
+.active
+    background-color: #3498db !important
+.wrong
+    background-color: #c0392b !important
+    cursor: auto !important
+.correct
+    background-color: #27ae60 !important
+.shake-horizontal 
+	-webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+	        animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both
+.bounce-top 
+	-webkit-animation: bounce-top 0.9s both
+	        animation: bounce-top 0.9s both
+.heartbeat 
+	-webkit-animation: heartbeat 1.5s ease-in-out infinite both
+	        animation: heartbeat 1.5s ease-in-out infinite both
+
+
+#quiz  
+    display: block
+
+.quiz-box
+    color: white  
+    font-size: 1.5rem
+    font-family: Bungee
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    button       
+        border: none
+        border-radius: 50px
+        margin: 0
+        color: white  
+        font-size: 1.2em
+        font-family: Bungee
+        font-weight: lighter
+        text-align: center
+        text-transform: uppercase
+        transition: 0.4s ease-in-out all
+        width: 30vh
+        text-align: center
+        
+.confirm
+    align-self: center
+    justify-self: center
+    background-color: #f39c12
+    &:hover
+        background-color: white
+        color: #f39c12
+        cursor: pointer
+.next
+    background-color: #3498db
+    margin: 0 3rem !important
+    transition: 400ms ease-in-out all
+    &:hover
+        cursor: pointer
+        transform: translateX(5px) 
+.end
+    background-color: #1abc9c
+    margin: 0 3rem !important
+    transition: 400ms ease-in-out all
+    &:hover
+        cursor: pointer
+        transform: translateX(5px)
+
+.question
+    display: flex
+    flex-direction: column
+    justify-content: center
+    & h1  
+        font-size: 7vh
+        padding: 0
+        margin: 0
+        min-width: 50vw
+        text-align: center
+    & ol 
+        list-style-type: none
+        margin-top: 0
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        align-content: center
+    & li 
+        background-color: rgba(0,0,0,0.4)
+        border-radius: 3rem
+        margin-bottom: 1rem
+        padding: 0.5rem 2rem
+        margin-left: -5%
+        width: 90%
+        cursor: pointer
+        transition: 200ms ease-in-out all
+        max-width: 700px
+        &:hover 
+            background-color: rgba(0,0,0,0.55)
+
+
+// Results
+.results
+    display: none
+    flex-direction: column
+    margin: 0
+    width: 100vw
+    height: 100vh
+    justify-content: center
+    & h1
+        display: none
+        font-family: Bungee
+        color: white 
+        font-size: 5rem
+        text-decoration: underline
+        position: absolute
+        top: 0
+        padding: 0
+        margin: 0
+        left: 0
+        text-align: start
+        padding-left: 20%
+        width: 80%
+    & h2
+        font-family: Bungee
+        font-size: 10rem
+        color: white
+        margin: 0 
+        padding: 0
+        left: 0
+        width: 100%
+        text-align: center
+        top: 0
+        line-height: 10rem
+    & h3
+        font-family: Bungee
+        font-size: 5rem
+        color: white
+        margin: 0 
+        padding: 0
+        left: 0
+        width: 100%
+        text-align: center
+
+
+//Graf
+
+#graph
+    width: 30vw
+    height: 100px
+    border: 3px solid black
+    position: relative
+    margin-left: 35vw
+    margin-top: 5vh
+    &:after
+        position: absolute
+        content: "-100%"
+        left: 0%
+        color: white
+        bottom: -3rem
+        font-size: 1.5rem
+        font-family: Bungee
+    &:before
+        position: absolute
+        content: "100%"
+        right: 0%
+        color: white
+        bottom: -3rem
+        font-size: 1.5rem
+        font-family: Bungee
+
+#graphContent 
+    display: block
+    background: #333
+    width: 0
+    height: 100px
+    content: ""
+    position: absolute
+    bottom: 0
+.showpercent
+    position: absolute
+    font-size: 1.5rem
+    top: -3rem
+    color: white
+    font-family: Bungee
+    tra
+.zero
+    position: absolute
+    left: 50%
+    bottom: -3rem
+    font-family: Bungee 
+    font-size: 1.5rem
+    color: white
+    transform: translateX(-0.75rem)
+    
+    
+    
+
+
