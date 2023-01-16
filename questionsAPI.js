@@ -1,3 +1,8 @@
+// Configuration
+let API_URL = "https://www.jidlopodnos.cz"
+//----
+
+
 let randomOrder = [];
 generateRandomNumbers();
 
@@ -13,14 +18,13 @@ function generateRandomNumbers() {
         [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
     }
 
-    // return n elements
     randomOrder = numbers
 }
 
 // získání otázky pomocí API
 async function getQuestion(questionNumber) {
     
-    const response = await fetch(`http://localhost:3030/api/campaign/xmasquiz/question/${randomOrder[questionNumber]}`);
+    const response = await fetch(`${API_URL}/api/campaign/xmasquiz/question/${randomOrder[questionNumber]}`);
     
     const data = await response.json();
     
@@ -29,7 +33,7 @@ async function getQuestion(questionNumber) {
   
  // validace odpovědi pomocí API
 async function validateAnswer(questionId, answer) {
-    const response = await fetch(`http://localhost:3030/api/campaign/xmasquiz/validatequestion/${randomOrder[questionId]}`, {
+    const response = await fetch(`${API_URL}/api/campaign/xmasquiz/validatequestion/${randomOrder[questionId]}`, {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
